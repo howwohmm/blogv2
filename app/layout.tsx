@@ -4,6 +4,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import KeyboardShortcuts from '@/components/KeyboardShortcuts'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,6 +44,7 @@ export default function RootLayout({
         <main className="mt-14">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   )
