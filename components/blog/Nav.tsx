@@ -15,12 +15,12 @@ export default function Nav() {
     <nav className="fixed top-0 left-1/2 w-full max-w-[1728px] -translate-x-1/2 z-10">
       <div className="flex justify-between items-center p-3 gap-3">
         <div className="flex gap-2">
-          <Link 
-            href="/"
+          <a 
+            href="https://ohmis.me"
             className="flex items-center justify-center px-2 py-1 rounded bg-nav-button text-button-text backdrop-blur"
           >
             Home
-          </Link>
+          </a>
           <Link 
             href="/blog"
             className="flex items-center justify-center px-2 py-1 rounded bg-nav-button text-button-text backdrop-blur"
