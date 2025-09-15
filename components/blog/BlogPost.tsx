@@ -1,15 +1,13 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
+import { marked } from 'marked'
+import type { BlogPost } from '@/lib/mdx'
+import '../../styles/blog.css'
 
 interface BlogPostProps {
-  post: {
-    title: string
-    date: string
-    author: string
-    readingTime: string
-    categories: string[]
-    content: string
-  }
+  post: BlogPost
 }
 
 export default function BlogPost({ post }: BlogPostProps) {
@@ -101,8 +99,8 @@ export default function BlogPost({ post }: BlogPostProps) {
           <article className="prose prose-lg max-w-none">
             <div className="font-mono text-[12px] uppercase text-[#697386] mb-8">/ ARTICLE</div>
             <div 
-              className="text-[17px] leading-relaxed text-[#1a1f36] space-y-6"
-              dangerouslySetInnerHTML={{ __html: post.content }} 
+              className="prose"
+              dangerouslySetInnerHTML={{ __html: marked(post.content) }} 
             />
           </article>
         </div>
